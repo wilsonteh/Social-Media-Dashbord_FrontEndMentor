@@ -27,6 +27,7 @@ body {
     background-color: var(--bg);
     margin: 0;
     padding: 0;
+    font-size: 14px;
 }
 
 .top-bg {
@@ -77,10 +78,16 @@ body {
 
 .main-row .box {
     width: 25%;
-    height: 200px;
+    min-height: 210px;
+    height: auto;
+    color: var(--text);
     background-color: var(--cardBg);
-    margin: 0 .7rem;
+    margin: 0 1rem;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .main-row .box:nth-child(1) {
@@ -96,6 +103,45 @@ body {
 }
 .main-row .box:nth-child(4) {
     border-top: 5px solid var(--youtube);
+}
+
+.box .handle {
+    flex-grow: 1;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+}
+
+.box .handle .social-icon {
+    margin: 0 .5rem 0 0;
+}
+
+.box .followers {
+    flex-grow: 1;
+    color: var(--darkText);
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+}
+
+.box .followers-text {
+    flex-grow: 1;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.box .update {
+    flex-grow: 1;
+    color: var(--limeGreen);
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
 }
 
 
