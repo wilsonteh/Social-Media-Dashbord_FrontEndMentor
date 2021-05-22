@@ -67,10 +67,6 @@ body {
     margin: .5rem 0 0 0;
 }
 
-.toggle::after {
-    float: right;
-}
-
 .main-row {
     display: flex;
     margin: 3rem 0 0 0;
@@ -144,6 +140,30 @@ body {
     align-items: flex-start;
 }
 
+.overview {
+    width: 100%;
+}
+
+.overview .heading {
+    color: var(--text);
+    margin: 3rem 0 1rem 1rem;
+}
+
+.sub-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sub-row .box {
+    width: calc(25% - 2rem);
+    height: auto;
+    min-height: 150px;
+    background-color: var(--cardBg);
+    margin: .7rem 1rem;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
 
 
 
