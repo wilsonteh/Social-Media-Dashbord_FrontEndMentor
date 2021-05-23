@@ -68,6 +68,10 @@ body {
     margin: .5rem 0 0 0;
 }
 
+hr {
+    display: none;
+}
+
 .main-row {
     margin: 3rem 0 0 0;
     display: grid;
@@ -227,6 +231,21 @@ body {
 }
 
 @media screen and (max-width: 576px) {
+    #top-bg {
+        height: 40vh;
+    }
+    #upper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    hr {
+        display: block;
+        border: 0;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(0, 0, 0, .4);
+        margin: 1.5rem 0;
+    }
     .main-row,.sub-row{
         grid-template-columns: repeat(1, 1fr);
     }
