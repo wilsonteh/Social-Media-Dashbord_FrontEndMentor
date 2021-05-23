@@ -157,13 +157,58 @@ body {
 .sub-row .box {
     width: calc(25% - 2rem);
     height: auto;
-    min-height: 150px;
+    min-height: 130px;
     background-color: var(--cardBg);
     margin: .7rem 1rem;
     padding: 0;
     box-sizing: border-box;
     border-radius: 5px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
+
+.sub-row .box .title {
+    /* background-color: red; */
+    margin: 0;
+    color: var(--text);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    padding: 1rem 0 0 1.5rem;
+}
+
+.sub-row .box .wrapper {
+    /* background-color: yellow; */
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.wrapper .social-icon {
+    padding: 0 0 0 1rem;
+}
+
+.sub-row .box .stats {
+    /* background-color: skyblue; */
+    margin: 0;
+    color: var(--darkText);
+    font-weight: 700;
+    font-size: 2rem;
+    display: flex;  
+    align-items: center;
+    padding: 0 0 1rem 1.5rem;
+}
+
+.sub-row .box .update {
+    /* background-color: silver; */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 0 1rem 0;
+}
+
+
 
 
 
