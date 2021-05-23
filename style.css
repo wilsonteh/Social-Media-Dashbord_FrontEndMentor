@@ -38,15 +38,18 @@ body {
 
 #container {
     width: 80%;
-    height: 100vh;
-    margin: auto; 
-    /* background-color: red; */
+    height: auto;
+    min-height: 100vh;
+    margin: auto;
+    background-color: red;
 }
 
 #content {
     width: 80%;
     position: absolute;
     top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
 }
@@ -160,7 +163,7 @@ hr {
     display: grid;
     gap: 1.5rem 2rem;
     grid-template-columns: repeat(4, 1fr);
-
+    margin: 0 0 3rem 0;
 }
 
 .sub-row .box {
@@ -218,6 +221,11 @@ hr {
 .attribution { 
     font-size: 11px; 
     text-align: center; 
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    transform: translateX(-50%);
 }
     
 .attribution a {
