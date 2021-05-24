@@ -5,14 +5,13 @@
     --twitter: hsl(203, 89%, 53%);
     --instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
     --youtube: hsl(348, 97%, 39%);
-    --darkBg: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
-    --lightBg: hsl(230, 22%, 74%);
-
+    
     /* Dark Theme */
     --bgDark: hsl(230, 17%, 14%);
     --topBgDark: hsl(232, 19%, 15%);
     --cardBgDark: hsl(228, 28%, 20%);
     --cardTextDark: hsl(228, 34%, 66%);
+    --cyanToggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
 
     /* Light Theme */
     --bg: hsl(0, 0%, 100%);
@@ -20,11 +19,16 @@
     --cardBg: hsl(227, 47%, 96%);
     --text: hsl(228, 12%, 44%);
     --darkText: hsl(230, 17%, 14%);
+    --greyToggle: hsl(230, 22%, 74%);
+
+    /* custom var */
+    --toggleWidth: 50px;
+    --toggleHeight: calc(var(--toggleWidth) / 2);
 }
 
 body {
     font-family: 'Inter', Arial, Helvetica, sans-serif;
-    background-color: var(--bg);
+    background-color: var(--topBg);
     margin: 0;
     padding: 0;
     font-size: 14px;
@@ -73,6 +77,59 @@ body {
 
 hr {
     display: none;
+}
+
+.toggle-wrapper {
+    display: flex;
+    align-items: center;
+    color: var(--cardTextDark);
+    font-weight: 700;
+}
+
+.toggle-wrapper p {
+    margin: 0 .8rem 0 0;
+}
+
+.toggle {
+    width: var(--toggleWidth);
+    height: var(--toggleHeight);
+    border-radius: 50px;
+    position: relative;
+}
+
+#switch {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.round {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--greyToggle);
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+.round:hover {
+    background-image: var(--cyanToggle);
+}
+
+.round::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: calc(var(--toggleWidth) / 2 - (2px * 2));     
+    height: calc(var(--toggleHeight) - (2px * 2));
+    background-color: white;
+    border-radius: 50px;
+    transition: .3s;
+}
+
+#switch:checked + .round::before {
+    transform: translateX(calc(var(--toggleWidth) * -1 / 2));
 }
 
 .main-row {
