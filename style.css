@@ -6,30 +6,38 @@
     --instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
     --youtube: hsl(348, 97%, 39%);
     
-    /* Dark Theme */
-    --bgDark: hsl(230, 17%, 14%);
-    --topBgDark: hsl(232, 19%, 15%);
-    --cardBgDark: hsl(228, 28%, 20%);
-    --cardTextDark: hsl(228, 34%, 66%);
-    --cyanToggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
-
-    /* Light Theme */
-    --bg: hsl(0, 0%, 100%);
-    --topBg: hsl(225, 100%, 98%);
-    --cardBg: hsl(227, 47%, 96%);
-    --cardBgToggle: hsl(227, 47%, 90%);
-    --text: hsl(228, 12%, 44%);
-    --darkText: hsl(230, 17%, 14%);
-    --greyToggle: hsl(230, 22%, 74%);
-
     /* custom var */
     --toggleWidth: 50px;
     --toggleHeight: calc(var(--toggleWidth) / 2);
 }
 
+.light-theme {
+    --bg: hsl(0, 0%, 100%);
+    --topBg: hsl(225, 100%, 98%);
+    --cardBg: hsl(227, 47%, 96%);
+    --cardBgHover: hsl(227, 47%, 90%);
+    --subText: hsl(228, 12%, 44%);
+    --mainText: hsl(230, 17%, 14%);
+    --toggleBg: hsl(230, 22%, 74%);
+    --toggleBgHover: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    --toggleRound: white;
+}
+
+.dark-theme {
+    --bg: hsl(230, 17%, 14%);
+    --topBg: hsl(232, 19%, 15%);
+    --cardBg: hsl(228, 28%, 20%);
+    --cardBgHover: hsl(228, 28%, 28%);
+    --subText: hsl(228, 34%, 66%);
+    --mainText: hsl(0, 0%, 100%);
+    --toggleBg: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    --toggleBgHover: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    --toggleRound: hsl(228, 28%, 20%);
+}
+
 body {
     font-family: 'Inter', Arial, Helvetica, sans-serif;
-    background-color: var(--topBg);
+    background-color: var(--bg);
     margin: 0;
     padding: 0;
     font-size: 14px;
@@ -66,12 +74,12 @@ body {
 }
 
 .heading {
-    color: var(--darkText);
+    color: var(--mainText);
     margin: 1.5rem 0 0 0;
 }
 
 .sub-heading {
-    color: var(--text);
+    color: var(--subText);
     font-weight: 700;
     margin: .5rem 0 0 0;
 }
@@ -83,12 +91,16 @@ hr {
 .toggle-wrapper {
     display: flex;
     align-items: center;
-    color: var(--cardTextDark);
+    color: var(--subText);
     font-weight: 700;
 }
 
 .toggle-wrapper p {
     margin: 0 .8rem 0 0;
+}
+
+.toggle-wrapper:hover {
+    color: var(--mainText);
 }
 
 .toggle {
@@ -108,13 +120,13 @@ hr {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: var(--greyToggle);
+    background: var(--toggleBg);
     cursor: pointer;
     border-radius: 50px;
 }
 
 .round:hover {
-    background-image: var(--cyanToggle);
+    background-image: var(--toggleBgHover);
 }
 
 .round::before {
@@ -124,7 +136,7 @@ hr {
     right: 2px;
     width: calc(var(--toggleWidth) / 2 - (2px * 2));     
     height: calc(var(--toggleHeight) - (2px * 2));
-    background-color: white;
+    background-color: var(--toggleRound);
     border-radius: 50px;
     transition: .3s;
 }
@@ -144,7 +156,7 @@ hr {
     width: 100%;
     min-height: 210px;
     height: auto;
-    color: var(--text);
+    color: var(--subText);
     background-color: var(--cardBg);
     margin: 0;
     border-radius: 5px;
@@ -169,8 +181,6 @@ hr {
     border-top: 5px solid var(--youtube);
 }
 
-
-
 .box .handle {
     flex-grow: 1;
     font-weight: 700;
@@ -185,7 +195,7 @@ hr {
 
 .box .followers {
     flex-grow: 1;
-    color: var(--darkText);
+    color: var(--mainText);
     font-size: 3.5rem;
     font-weight: 700;
     margin: 0;
@@ -215,7 +225,7 @@ hr {
 }
 
 .overview .heading {
-    color: var(--text);
+    color: var(--subText);
     margin: 3rem 0 1rem 0;
 }
 
@@ -240,7 +250,7 @@ hr {
 .sub-row .box .title {
     /* background-color: red; */
     margin: 0;
-    color: var(--text);
+    color: var(--subText);
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -262,7 +272,7 @@ hr {
 .sub-row .box .stats {
     /* background-color: skyblue; */
     margin: 0;
-    color: var(--darkText);
+    color: var(--mainText);
     font-weight: 700;
     font-size: 2rem;
     display: flex;  
@@ -280,7 +290,7 @@ hr {
 
 .box:hover {
     cursor: pointer;
-    background-color: var(--cardBgToggle);
+    background-color: var(--cardBgHover);
 }
 
 .attribution { 
