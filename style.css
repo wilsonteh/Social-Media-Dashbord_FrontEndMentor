@@ -38,7 +38,7 @@
 }
 
 * {
-    transition: background-color 0.3s ease, color .3s ease;
+    transition: background-color 0.3s ease;
 }
 
 body {
@@ -109,6 +109,7 @@ hr {
 
 .toggle-wrapper:hover {
     color: var(--mainText);
+    transition: .1s;
 }
 
 .toggle {
@@ -296,6 +297,10 @@ hr {
     justify-content: center;
     align-items: center;
     padding: 0 0 1rem 0;
+}
+
+.sub-row .box .update img {
+    padding: 0 .2rem 0 0;
 }
 
 .box:hover {
