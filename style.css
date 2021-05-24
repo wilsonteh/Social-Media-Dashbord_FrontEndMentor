@@ -246,7 +246,7 @@ hr {
     display: grid;
     gap: 1.5rem 2rem;
     grid-template-columns: repeat(4, 1fr);
-    margin: 0 0 3rem 0;
+    margin: 0 0 4rem 0;
 }
 
 .sub-row .box {
@@ -347,5 +347,8 @@ hr {
     }
     .main-row,.sub-row{
         grid-template-columns: repeat(1, 1fr);
+    }
+    .attribution {
+        white-space: nowrap;
     }
 }
