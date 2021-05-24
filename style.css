@@ -228,6 +228,10 @@ hr {
     align-items: flex-start;
 }
 
+.box .update img {
+    padding: .4rem .2rem 0 0;
+}
+
 .overview {
     width: 100%;
 }
