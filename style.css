@@ -21,6 +21,7 @@
     --toggleBg: hsl(230, 22%, 74%);
     --toggleBgHover: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
     --toggleRound: white;
+    --footerColor: black;
 }
 
 .dark-theme {
@@ -33,6 +34,11 @@
     --toggleBg: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
     --toggleBgHover: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
     --toggleRound: hsl(228, 28%, 20%);
+    --footerColor: white;
+}
+
+* {
+    transition: background-color 0.3s ease, color .3s ease;
 }
 
 body {
@@ -74,8 +80,10 @@ body {
 }
 
 .heading {
+    font-size: 1.5rem;
     color: var(--mainText);
     margin: 1.5rem 0 0 0;
+    white-space: nowrap;
 }
 
 .sub-heading {
@@ -301,12 +309,13 @@ hr {
     bottom: 1%;
     left: 50%;
     transform: translateX(-50%);
-}
-    
-.attribution a {
-    color: hsl(228, 45%, 44%); 
+    color: var(--footerColor); 
 }
 
+.attribution a {
+    color: var(--footerColor);
+}
+    
 @media screen and (max-width: 992px) {
     .main-row, .sub-row {
         grid-template-columns: repeat(2, 1fr);
